@@ -27,6 +27,7 @@ So I decided to look for features which may be have an outsized effect on the da
 I then performed a two sample bootstrapping test on each feature to verify that there was a difference in the distribution between the portion of the entries which included the clusters in the logerror and the others which did not.
 
 ![caption](/99.png)
+
 Nonetheless, I developed a more complete list by using gradient boosting from xgboost to find a list of important features as some of the above list turned out to be poor choices.
 
 ## Initial Linear and Polynomial Regression
@@ -34,11 +35,13 @@ I started with a basic linear regression to get some initial information on how 
 
 ### Initial Difficulties
 The data for ‘logerror’ is nearly entirely closer to 0, thus linear regressions will be very close to the line y=0. However, this means that I will miss many of the points which are further from 0. I can see the distribution of ‘logerror’ in normal scale to show how prevalent 0 is, and also in log scale to the structure of the data not near 0.
+
 ![caption](/21.png)
 
 A fitted linear regression on this data gives an r2 score of only 0.004 and a residuals plot, which should be randomly distributed around 0 is displayed below.
 I did not expect a linear regression to be a very good model, but this is much worse than expected.
 Even some basic polynomial regressions do not do a much better job with similar r2 scores.
+
 ![caption](/scatter.png)
 
 ### Reactions
